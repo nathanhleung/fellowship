@@ -10,7 +10,12 @@ html
     link(rel='stylesheet' href='/css/main.css')
     block head
   body
-    block content
+    header
+      include /_partials/header
+    main
+      block content
+    footer
+      include /_partials/footer
     script(src='https://code.jquery.com/jquery-2.2.3.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
     script(src='/js/main.js')
