@@ -6,6 +6,7 @@
   "scripts": {
     "gulp": "gulp",
     "gulp:w": "gulp watch",
+    "server": "cd build && python -m SimpleHTTPServer 8080"
   },
   "author": "nathanhleung",
   "license": "ISC",
