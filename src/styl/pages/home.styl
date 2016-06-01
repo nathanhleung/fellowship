@@ -1,14 +1,29 @@
 #home
-  .jumbotron:first-child
+  .jumbotron:first-child,
+  .jumbotron:nth-child(3)
     min-height 60vh
     background rgba(#111, 0.7)
     color #eee
+    margin-bottom 0
     
-    #home-text
+    .home-text
       text-align center
       
       h1
         font-size 4rem
+        
+    .btn
+      background transparent
+      color #eee
+      
+      &:hover
+        color #ccc
   
   .container:nth-child(2)
-    // 
+    .btn
+      color #444
+    
+      &:hover
+        background transparent 
+        color #111
+        border-color #333

@@ -2,7 +2,32 @@ extends /_layout
 
 block config
   - var title = 'Works Cited';
+  
+block head
+  style.
+    .cited-container {
+      padding-left: 4rem;
+    }
+    .cited-container > p {
+      text-indent: -4rem;
+    }
 
 block content
   .container
+    br
     h1 Works Cited
+    br
+    .row
+      .col-sm-8
+        .cited-container
+          p Hafen, Christopher A. et al. “The Pivotal Role of Adolescent Autonomy in Secondary School Classrooms.” Journal of Youth and Adolescence 41.3 (2012): 245–255. PMC. Web. 1 June 2016.
+          p Hollingsworth, Jana. "Duluth high school principals want to stick with open campuses." Duluth News-Tribune (MN) 15 May 2013:Newspaper Source. Web. 31 May 2016.
+          p Meyer, Bill, Naomi Haywood, Darshan Sachdev, and Sally Faraday. "What Is Independent Learning and What Are the Benefits for Students?"Independent Learning: Literature Review (2008): n. pag. What Is Independent Learning and What Are the Benefits for Students?Department for Children, Schools and Families Research Report. Web. 31 May 2016.
+          p Moore, Michael Grahame. "Toward a Theory of Independent Learning and Teaching." The Journal of Higher Education 44.9 (1973): 661-79. Web.
+          p Rosen, Catherine E. "The Impact of an Open Campus Program upon High School Students' Sense of Control over Their Environment." Psychol. Schs. Psychology in the Schools 14.2 (1977): 216-19. Wiley Online Library. Web. 31 May 2016.
+          p Saslow, Linda. "Schools Split on 'Open Campus'" The New York Times. The New York Times, 22 Oct. 1988. Web. 31 May 2016.
+          p Watman, Thomas J. "Open Campus. The W. E. S. Bulletin." OPEN CAMPUS(1973): n. pag. Open Campus. The W. E. S. Bulletin. ERIC. Web. 31 May 2016.
+          br
+          br
+      .col-sm-4
+        img.img-responsive.img-thumbnail(src="https://i.imgur.com/mbLV6bd.png")
