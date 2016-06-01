@@ -1,0 +1,95 @@
+extends /_layout
+
+block config
+  - var title = 'Home';
+  
+block head
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css')
+  link(rel='stylesheet' href='css/pages/home.css')
+
+
+block content
+  #home
+    .jumbotron.flex-center(data-parallax='scroll' data-image-src='https://i.imgur.com/pRe1tBi.jpg')
+      .container
+        .home-text
+          // delay wow since this is a heavy page
+          h1.wow.fadeInDown(data-wow-delay='0.4s') More than just a film
+          br
+          p.wow.fadeIn(data-wow-delay='0.8s')
+            i The Fellowship of the Hall Pass&nbsp;
+            | is a movement, and we stand for freedom, autonomy, and independence in education.
+          br
+          br
+          iframe.wow.pulse(
+            data-wow-delay='1.2s'
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/6gPr2DS44TI"
+            frameborder="0"
+            allowfullscreen
+          )
+          br
+          br
+          a.btn.btn-lg.btn-default.wow.pulse View Our Full Solution &raquo;
+    .container.text-center
+      br
+      br
+      h1 Who We Are
+      br
+      p.lead
+        i The Fellowship of the Hall Pass&nbsp;
+        | is much more than a film. It is a movement that stands for freedom, autonomy, and independence in
+        | education. We strive for 2 major goals: allowing a freer campus during study halls, and allowing independent study and course skipping during study halls.
+        br
+        br
+      h2 Learn More
+      p We've done extensive research on each of these topics and encourage you to find out more.
+      a.btn.btn-default.btn-lg(href='open') Freer Campus &raquo;
+      | &nbsp;&nbsp;&nbsp;&nbsp;
+      a.btn.btn-default.btn-lg(href='indep') Independent Study &raquo;
+      br
+      br
+      br
+      br
+    .jumbotron.flex-center(data-parallax='scroll' data-image-src='https://i.imgur.com/pRe1tBi.jpg')
+      .container
+        .row
+          .col-sm-10.col-sm-offset-1
+            .home-text
+              h1 Meet The Team
+              br
+              p.
+                This team of filmmakers has the passion and drive to start a movement like the Fellowship.
+                They have one common goal: to turn a mere idea into reality
+              br
+              br
+              .row
+                .col-sm-4
+                  img.img-thumbnail.img-responsive.img-circle(src='https://i.imgur.com/AGA56NQ.png?1')
+                  h3 Arslan "Rich Homie Slan" Amir
+                  p.lead Producer
+                .col-sm-4
+                  img.img-thumbnail.img-responsive.img-circle(src='https://i.imgur.com/i6avYMl.jpg?1')
+                  h3 Sam "Samwise" Klugherz
+                  p.lead Screenwriter
+                .col-sm-4
+                  img.img-thumbnail.img-responsive.img-circle(src='https://i.imgur.com/VIrJLCi.jpg?1')
+                  h3 Nathan "Nate Dogg the Grey" Leung
+                  p.lead Director
+              hr
+              br
+              br
+              br
+              h1(style='font-family: Times New Roman; font-size: 19rem; line-height: 1rem;') &rdquo;
+              p
+                | "A modern masterpiece—true cinema for the sake of art"
+                br
+                br
+                i &ndash;Anonymous
+                  
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.4.2/parallax.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js')
+  script.
+    new WOW().init();
