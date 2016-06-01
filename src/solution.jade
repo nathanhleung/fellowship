@@ -2,28 +2,91 @@ extends /_layout
 
 block config
   - var title = 'The Solution';
+  
+block head
+  link(rel='stylesheet' href='css/pages/solution.css')
 
 block content
-  .container
-    .text-center
+  #solution
+    .container
+      .text-center
+        br
+        h1 Solution
+        br
+        p.lead Our solution consists of a study hall programs that gives students more autonomy. 
+      .row
+        .col-sm-7
+          p.
+            As shown in our page on independent study, there are a plethora of benefits and
+            ways education can be improved with implementation in high schools. In our
+            solution, students would be allowed to conduct their own independent studies with
+            no restrictions from the teacher (ex. silence) during study hall class time.
+            Students would be able to focus on their passions.
+          p.
+            The second aspect of our solution is that students would also be allowed to
+            leave campus during the study hall period and go wherever they please both on
+            or off campus to give them a greater control over their environment. As explained
+            in our video, leaving the open campus privilege exclusive to higher achieving
+            students would prevent any irresponsible students from taking advantage of a
+            greater level of autonomy that others could benefit from.
+        .col-sm-5
+          img.img-thumbnail.img-responsive(src='https://i.imgur.com/QEMgvyG.png')
       br
-      h1 Solution
       br
-      p.lead Our solution consists of a study hall programs that gives students more autonomy. 
-    .row
-      .col-sm-7
-        p.
-          As shown in our page on independent study, there are a plethora of benefits and
-          ways education can be improved with implementation in high schools. In our
-          solution, students would be allowed to conduct their own independent studies with
-          no restrictions from the teacher (ex. silence) during study hall class time.
-          Students would be able to focus on their passions.
-        p.
-          The second aspect of our solution is that students would also be allowed to
-          leave campus during the study hall period and go wherever they please both on
-          or off campus to give them a greater control over their environment. As explained
-          in our video, leaving the open campus privilege exclusive to higher achieving
-          students would prevent any irresponsible students from taking advantage of a
-          greater level of autonomy that others could benefit from.
-      .col-sm-5
-        img.img-thumbnail.img-responsive(src='https://i.imgur.com/QEMgvyG.png')
+      .text-center
+        a.btn.btn-lg(href='#film') View The Full Film &raquo;
+      br
+      br
+      br
+    .jumbotron#film.flex-center
+      .container
+        .solution-text
+          h1 The Film
+          br
+          p "Greatest film of the year" &ndash;Anonymous
+          br
+          .row#countdown
+            .col-sm-6.col-sm-offset-3
+              .col-xs-3
+                h1#days 0
+                p days
+              .col-xs-3
+                h1#hours 0
+                p hours
+              .col-xs-3
+                h1#minutes 0
+                p minutes
+              .col-xs-3
+                h1#seconds 0
+                p seconds
+            .col-xs-12
+              br
+              p Drop date is 11AM Eastern, June 1, 2016
+          iframe#full-movie.hidden(
+              data-wow-delay='1.2s'
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/6gPr2DS44TI"
+              frameborder="0"
+              allowfullscreen
+            )
+      
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js')
+  script(src='js/solution.js')
+  script.
+    // smooth scroll
+    $(function() {
+      $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    });
