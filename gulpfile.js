@@ -15,20 +15,25 @@ const paths = {
   },
   stylus: {
     watch: ['./src/styl/**/*.styl'],
-    compile: ['./src/styl/**/*.styl', '!./src/style/elements.styl'],
+    compile: ['./src/styl/**/*.styl', '!./src/styl/elements.styl', '!./src/styl/utility.styl'],
   },
   jade: {
     watch: ['./src/**/*.jade'],
     compile: ['./src/**/*.jade', '!./src/_layout.jade', '!./src/_partials/**/*.jade']
   },
+  fonts: {
+    watch: ['./src/fonts/**/*'],
+    compile: ['./src/fonts/**/*']
+  }
 };
 
-gulp.task('default', ['babel', 'stylus', 'jade']);
+gulp.task('default', ['babel', 'stylus', 'jade', 'fonts']);
 
 gulp.task('watch', () => {
   gulp.watch(paths.babel.watch, ['babel']);
   gulp.watch(paths.stylus.watch, ['stylus']);
   gulp.watch(paths.jade.watch, ['jade']);
+  gulp.watch(paths.fonts.watch, ['fonts']);
 });
 
 gulp.task('babel', () => {
@@ -44,7 +49,9 @@ gulp.task('stylus', () => {
     .pipe(plumber())
     .pipe(stylus())
     .pipe(autoprefixer())
-    .pipe(cssnano())
+    .pipe(cssnano({
+      zindex: false
+    }))
     .pipe(gulp.dest('./build/css'));
 });
 
@@ -55,4 +62,9 @@ gulp.task('jade', () => {
       basedir: path.join(__dirname, 'src'),
     }))
     .pipe(gulp.dest('./build'));
+});
+
+gulp.task('fonts', () => {
+  return gulp.src(paths.fonts.compile)
+    .pipe(gulp.dest('./build/fonts'));
 });

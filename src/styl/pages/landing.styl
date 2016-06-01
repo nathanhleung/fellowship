@@ -1,0 +1,30 @@
+$landing-color = darken(gold, 20%);
+
+#landing
+  position absolute
+  z-index 9999
+  margin-top -50px
+
+  .jumbotron
+    min-height 100vh
+    width 100vw
+    margin-bottom 0
+    background #111
+    color $landing-color
+    
+    #landing-text
+      text-align center
+      
+      h1
+        line-height 1.8
+        
+    #landing-btn
+      padding 20px 35px
+      border 1px solid $landing-color
+      color $landing-color
+      
+      &:hover
+        border-color lighten($landing-color, 50%)
+        color lighten($landing-color, 50%)
+        position relative
+        top 2px

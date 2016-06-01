@@ -1,14 +1,23 @@
+@import 'utility'
 @import 'elements'
 
 body
   display flex
   min-height 100vh
   flex-direction column
+  font-family 'Open Sans'
+  font-weight 300
+  
+header
+  .navbar-inverse
+    a.navbar-brand
+      font-family Aniron
+      color gold
 
 main
   flex 1
-  padding-top 50px
-  
+  padding-top 50px // navbar height
+
 footer
   .footer-content
     min-height 50px

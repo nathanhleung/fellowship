@@ -2,7 +2,42 @@ extends /_layout
 
 block config
   - var title = 'Home';
+  
+block head
+  link(rel='stylesheet' href='/css/pages/home.css')
+
 
 block content
-  .container
-    h1 yo
+  #home
+    .jumbotron.flex-center(data-parallax='scroll' data-image-src='https://i.imgur.com/NXD5jxr.jpg')
+      .container
+        #home-text
+          h1 More than a film
+          p.
+            We are a movement, and we stand for freedom, autonomy, and independence in education.
+          br
+          br
+          iframe(
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/6gPr2DS44TI"
+            frameborder="0"
+            allowfullscreen
+          )
+    .container.text-center
+      h1 Who We Are
+      br
+      p.lead.
+        The Fellowship much more than a film. It is a movement that stands for freedom, autonomy, and independence in
+        education. We strive for 2 major goals: allowing a freer campus during study halls, and allowing independent study and course skipping during study halls.
+        <br>
+      h2 Learn More
+      a.btn.btn-default.btn-lg(href='/open') Freer Campus
+      | &nbsp;&nbsp;&nbsp;&nbsp;
+      a.btn.btn-default.btn-lg(href='/indep') Independent Study
+      br
+      br
+      br
+        
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.4.2/parallax.min.js')

@@ -1,0 +1,24 @@
+extends /_layout
+
+block config
+  - var title = 'Welcome';
+  
+block head
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css')
+  link(rel='stylesheet' href='/css/pages/landing.css')
+
+block content
+  #landing
+    .jumbotron.flex-center
+      //- group content together so flexbox knows to center the whole thing
+      #landing-text
+        h1.wow.fadeIn The Fellowship of the Hall Pass
+        p.wow.fadeIn(data-wow-delay='0.5s') Not just a film, but a movement
+        br
+        br
+        a#landing-btn.btn.btn-lg.wow.fadeInDown(href='/' data-wow-delay='1s') Join the Revolution &raquo;
+        
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js')
+  script.
+    new WOW().init();
